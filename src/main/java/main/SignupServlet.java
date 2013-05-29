@@ -1,7 +1,7 @@
 package main;
 
 
-import main.UyelerHandler;
+import handler.UyelerHandler;
 
 import java.io.IOException;
 
