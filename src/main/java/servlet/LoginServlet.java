@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		main.Uyeler uye = new Uyeler(request.getParameter("user"), request.getParameter("pass"));		
 		String data = "Kullanıcı bulunamadı !";
-		handler.UyelerHandler controller = new UyelerHandler();
+		main.UyelerHandler controller = new UyelerHandler();
 		int ret = controller.UyeKayitlimi(uye.getAd(), uye.getSifre());
 		if (ret == 1) {
 			request.getSession().setAttribute("kullanici", uye.getAd());	

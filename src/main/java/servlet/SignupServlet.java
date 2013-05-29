@@ -35,7 +35,7 @@ public class SignupServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
-		handler.UyelerHandler controller = new UyelerHandler();
+		main.UyelerHandler controller = new UyelerHandler();
 		controller.UyeKayit(user, pass);
 		request.getRequestDispatcher("login.jsp").forward(request, response);
 	}
