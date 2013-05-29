@@ -1,6 +1,6 @@
 package main;
 
-import handler.AraclarHandler;
+import main.AraclarHandler;
 
 import java.io.IOException;
 

@@ -1,7 +1,6 @@
 package main;
 
-
-import main.UyelerHandler;
+import handler.AraclarHandler;
 
 import java.io.IOException;
 
@@ -12,19 +11,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HomeServlet
+ * Servlet implementation class DeleteCarServlet
  */
-@WebServlet("/signup")
-public class SignupServlet extends HttpServlet {
+@WebServlet("/aracbirak")
+public class FreeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    
-    public SignupServlet() {
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public FreeServlet() {
         super();
-
+        // TODO Auto-generated constructor stub
     }
 
-	
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
@@ -33,11 +36,14 @@ public class SignupServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String user = request.getParameter("user");
-		String pass = request.getParameter("pass");
-		handler.UyelerHandler controller = new UyelerHandler();
-		controller.UyeKayit(user, pass);
-		request.getRequestDispatcher("login.jsp").forward(request, response);
+		request.setCharacterEncoding("ISO-8859-9");
+		String arac = request.getParameter("data");
+		AraclarHandler handler = new AraclarHandler();
+		handler.AracGuncelle(arac, "", "boşta");
+		String info = "Araç boşta.";
+		request.setAttribute("bilgi", info);
+		request.getRequestDispatcher("freecar.jsp").forward(request, response);
+		
 	}
 
 }
