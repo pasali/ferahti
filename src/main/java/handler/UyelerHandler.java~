@@ -17,7 +17,7 @@ public class UyelerHandler {
 		String sorgu = "select email,sifre from uyeler where email = '"+ email + "' and sifre = '"+ sifre + "'";
 		int sayac = 0;
 		try {
-			Class.forName("com.postgresql.jdbc.Driver");
+			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sorgu);
@@ -35,7 +35,7 @@ public class UyelerHandler {
 	public void UyeKayit(String email, String sifre) {
 		String sorgu = "INSERT INTO ferahti.uyeler (email, sifre) VALUES ('" + email + "', '" + sifre + "')";
 		try {
-			Class.forName("com.postgresql.jdbc.Driver");
+			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
