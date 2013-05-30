@@ -8,7 +8,7 @@ public class UyelerHandler {
 	static final String USER = "jfcawhlrrysslo";
 	static final String PASS = "pce7oasKqyHunqIDF_ajTL1_UR";
 	private Connection  conn;
-	private Statement stmt;
+	private PreparedStatement stmt;
 	private ResultSet rs;
 	
 	
@@ -19,7 +19,7 @@ public class UyelerHandler {
 		try {
 			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
-			stmt = conn.prepareStatement();
+			stmt = conn.prepareCall();
 			rs = stmt.executeQuery(sorgu);
 			while (rs.next()) {
 				sayac++;
@@ -37,7 +37,7 @@ public class UyelerHandler {
 		try {
 			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
-			stmt = conn.prepareStatement();
+			stmt = conn.prepareCall();
 			stmt.executeUpdate(sorgu);
 		
 			
