@@ -1,7 +1,7 @@
 package handler;
 
 import java.sql.*;
-
+import java.sql.PreparedStatement;
 
 public class UyelerHandler {
 	static final String URL = "jdbc:postgresql://ec2-23-21-129-125.compute-1.amazonaws.com/d70stbr7v9732u?useUnicode=true&characterEncoding=UTF-8";
