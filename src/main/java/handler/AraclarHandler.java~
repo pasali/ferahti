@@ -18,7 +18,7 @@ public class AraclarHandler {
 	
 	public void AracEkle(Araclar arac) {
 		
-		String sorgu = "INSERT INTO `ferahti`.`arac` (`marka`, `model`, `yakit`) " +
+		String sorgu = "INSERT INTO ferahti.arac (`marka`, `model`, `yakit`) " +
 				"VALUES ('"+ arac.getMarka() +"', '" + arac.getPlaka() + "', '"+ arac.getDurum() +"')";
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -34,7 +34,7 @@ public class AraclarHandler {
 		
 	public void AracGuncelle(String id, String user, String status) {
 		
-		String sorgu = "UPDATE `ferahti`.`arac` SET `kullanici`='" + user + "', `durum`='" + status + "' WHERE `idarac`='"+ id + "';";
+		String sorgu = "UPDATE ferahti.arac SET `kullanici`='" + user + "', `durum`='" + status + "' WHERE `idarac`='"+ id + "';";
 		
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -69,7 +69,7 @@ public class AraclarHandler {
 		return araclistesi;
 	}
 	public void AracSil(String id) {
-		String sorgu = "DELETE FROM `ferahti`.`arac` WHERE `idarac`='"+ id +"';";
+		String sorgu = "DELETE FROM ferahti.arac WHERE `idarac`='"+ id +"';";
 		try {
 			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
