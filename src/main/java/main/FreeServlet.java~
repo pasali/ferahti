@@ -37,11 +37,9 @@ public class FreeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("ISO-8859-9");
-		String[] arac = request.getParameterValues("data");
+		String arac = request.getParameter("data");
 		AraclarHandler handler = new AraclarHandler();
-		for (int i = 0; i < arac.length; i++) {
-			handler.AracGuncelle(arac[i], "", "boşta");
-		}
+		handler.AracGuncelle(arac, "", "boşta");
 		String info = "Araç boşta.";
 		request.setAttribute("bilgi", info);
 		request.getRequestDispatcher("freecar.jsp").forward(request, response);
