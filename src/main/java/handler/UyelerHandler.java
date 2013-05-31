@@ -19,7 +19,7 @@ public class UyelerHandler {
 		try {
 			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
-			stmt = conn.prepareStatement();
+			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sorgu);
 			while (rs.next()) {
 				sayac++;
@@ -37,7 +37,7 @@ public class UyelerHandler {
 		try {
 			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
-			stmt = conn.prepareStatement();
+			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
 		
 			
