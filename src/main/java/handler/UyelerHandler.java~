@@ -8,7 +8,7 @@ public class UyelerHandler {
 	static final String USER = "jfcawhlrrysslo";
 	static final String PASS = "pce7oasKqyHunqIDF_ajTL1_UR";
 	private Connection  conn;
-	private PreparedStatement stmt;
+	private Statement stmt;
 	private ResultSet rs;
 	
 	

@@ -14,7 +14,7 @@ public class UyelerHandler {
 	
 	
 	public int UyeKayitlimi(String email, String sifre) {
-		String sorgu = "select email,sifre from uyeler where email = '"+ email + "' and sifre = '"+ sifre + "'";
+		String sorgu = "select email,sifre from ferahti.uyeler where email = '"+ email + "' and sifre = '"+ sifre + "'";
 		int sayac = 0;
 		try {
 			Class.forName("org.postgresql.Driver");
