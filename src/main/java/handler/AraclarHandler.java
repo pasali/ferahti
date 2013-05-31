@@ -69,7 +69,7 @@ public class AraclarHandler {
 		return araclistesi;
 	}
 	public void AracSil(String id) {
-		String sorgu = "DELETE FROM ferahti.arac WHERE `idarac`='"+ id +"';";
+		String sorgu = "DELETE FROM ferahti.arac WHERE idarac='"+ id +"';";
 		try {
 			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);

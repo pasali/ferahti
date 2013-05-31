@@ -34,7 +34,7 @@ public class AraclarHandler {
 		
 	public void AracGuncelle(String id, String user, String status) {
 		
-		String sorgu = "UPDATE ferahti.arac SET `kullanici`='" + user + "', `durum`='" + status + "' WHERE `idarac`='"+ id + "';";
+		String sorgu = "UPDATE ferahti.arac SET kullanici='" + user + "', durum='" + status + "' WHERE idarac='"+ id + "';";
 		
 		try {
 			Class.forName("org.postgresql.Driver");
