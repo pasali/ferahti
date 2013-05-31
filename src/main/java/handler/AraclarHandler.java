@@ -21,7 +21,7 @@ public class AraclarHandler {
 		String sorgu = "INSERT INTO `ferahti`.`arac` (`marka`, `model`, `yakit`) " +
 				"VALUES ('"+ arac.getMarka() +"', '" + arac.getPlaka() + "', '"+ arac.getDurum() +"')";
 		try {
-			Class.forName("com.postgresql.jdbc.Driver");
+			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
@@ -37,7 +37,7 @@ public class AraclarHandler {
 		String sorgu = "UPDATE `ferahti`.`arac` SET `kullanici`='" + user + "', `durum`='" + status + "' WHERE `idarac`='"+ id + "';";
 		
 		try {
-			Class.forName("com.postgresql.jdbc.Driver");
+			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
@@ -52,7 +52,7 @@ public class AraclarHandler {
 		ArrayList<Araclar> araclistesi = new ArrayList<Araclar>();
 		String sorgu = "select * from ferahti.arac";
 		try {
-			Class.forName("com.postgresql.jdbc.Driver");
+			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeQuery(sorgu);
@@ -71,7 +71,7 @@ public class AraclarHandler {
 	public void AracSil(String id) {
 		String sorgu = "DELETE FROM `ferahti`.`arac` WHERE `idarac`='"+ id +"';";
 		try {
-			Class.forName("com.postgresql.jdbc.Driver");
+			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
@@ -85,7 +85,7 @@ public class AraclarHandler {
 		ArrayList<Araclar> araclistesi = new ArrayList<Araclar>();
 		String sorgu = "select * from ferahti.arac";
 		try {
-			Class.forName("com.postgresql.jdbc.Driver");
+			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeQuery(sorgu);
@@ -109,7 +109,7 @@ public class AraclarHandler {
 		ArrayList<Araclar> araclistesi = new ArrayList<Araclar>();
 		String sorgu = "select * from ferahti.arac";
 		try {
-			Class.forName("com.postgresql.jdbc.Driver");
+			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeQuery(sorgu);
