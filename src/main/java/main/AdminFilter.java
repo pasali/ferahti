@@ -35,8 +35,8 @@ public class AdminFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		
-		if(((HttpServletRequest)request).getSession().getAttribute("kullanici") != "admin") {
+		String user = (String) ((HttpServletRequest)request).getSession().getAttribute("kullanici");
+		if(!user.equals("admin")) {
 			((HttpServletResponse)response).sendRedirect("warning.jsp");
 		}
 		

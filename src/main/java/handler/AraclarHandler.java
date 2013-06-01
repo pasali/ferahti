@@ -18,7 +18,7 @@ public class AraclarHandler {
 	
 	public void AracEkle(Araclar arac) {
 		
-		String sorgu = "INSERT INTO ferahti.arac (`marka`, `model`, `yakit`) " +
+		String sorgu = "INSERT INTO ferahti.arac (`marka`, `model`, `durum`) " +
 				"VALUES ('"+ arac.getMarka() +"', '" + arac.getPlaka() + "', '"+ arac.getDurum() +"')";
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -41,8 +41,6 @@ public class AraclarHandler {
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
-			
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -92,7 +90,7 @@ public class AraclarHandler {
 			rs = stmt.executeQuery(sorgu);
 			while (rs.next()) {
 				Araclar a = new Araclar(rs.getInt("idarac"), rs.getString("marka"),rs.getString("kullanici"), rs.getString("plaka"), rs.getString("durum"));
-				if (rs.getString("durum").equals("boşta")) {
+				if (rs.getString("durum").equals("boşta") || rs.getString("durum") == null) {
 					araclistesi.add(a);
 				}
 				

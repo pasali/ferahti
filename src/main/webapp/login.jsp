@@ -1,15 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:include page="header.jsp"/>
-<center>
-<br>
-<form method="POST" action="login">
-  <table>
-	 <tr><td>E-mail</td><td>:<input type="text" name="user" size="5"/></td></tr>
-	  <tr><td>Şifre</td><td>:<input type="password" name="pass" size="5" /></td></tr>
-	  <tr><td><input type="submit" value="Giriş" /></td><td><a href="signup.jsp">kayit ol</a></td></tr>
-	</table>
-</form>
-${data}
-</center>
+
+
+<form class="form-horizontal well" method="POST" action="login">
+					<fieldset>
+						<div class="control-group">
+							<div class="controls">
+								E-mail:&nbsp;<input type="text" name="user" size="5"/>
+							
+							</div>
+						</div>
+
+						<div class="control-group">
+							
+							<div class="controls">
+								Şifre: &nbsp;&nbsp;&nbsp;<input type="password"  name="pass" size="5">
+
+							</div>
+						</div>
+
+						<div class="control-group">
+							<div class="controls">
+
+							<button type="submit" id="submit" class="btn btn-primary button-loading" data-loading-text="Loading...">Giriş Yap</button>
+							<a class="btn" href="signup.jsp">Kayıt Ol</a>
+							
+							</div>
+						</div>
+					</fieldset>
+				</form>
+
 <jsp:include page="footer.jsp"/>
