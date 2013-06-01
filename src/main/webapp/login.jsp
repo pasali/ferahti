@@ -30,5 +30,5 @@
 						</div>
 					</fieldset>
 				</form>
-
+${data}
 <jsp:include page="footer.jsp"/>
