@@ -22,7 +22,7 @@
 							<div class="controls">
 
 							<button type="submit" id="submit" class="btn btn-primary button-loading" data-loading-text="Loading...">Giriş Yap</button>
-							<a class="btn" href="signup.jsp">Kayıt Ol</a>
+							<a class="btn" href="signup.jsp">Kayıt Ol</a><br>
                             ${data}
 							</div>
 						</div>
