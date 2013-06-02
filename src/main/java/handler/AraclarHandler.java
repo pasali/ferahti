@@ -15,39 +15,37 @@ public class AraclarHandler {
 	private Connection  conn;
 	private Statement stmt;
 	private ResultSet rs;
-	
+
 	public void AracEkle(Araclar arac) {
-		
-		String sorgu = "INSERT INTO ferahti.arac (`marka`, `model`, `yakit`) " +
+
+		String sorgu = "INSERT INTO ferahti.arac (`marka`, `plaka`, `durum`) " +
 				"VALUES ('"+ arac.getMarka() +"', '" + arac.getPlaka() + "', '"+ arac.getDurum() +"')";
 		try {
 			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
-			
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-		
+
 	public void AracGuncelle(String id, String user, String status) {
-		
+
 		String sorgu = "UPDATE ferahti.arac SET kullanici='" + user + "', durum='" + status + "' WHERE idarac='"+ id + "';";
-		
+
 		try {
 			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
-			
-			
+
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public ArrayList<Araclar> AraclariGetir() {
 		ArrayList<Araclar> araclistesi = new ArrayList<Araclar>();
 		String sorgu = "select * from ferahti.arac";
@@ -61,8 +59,8 @@ public class AraclarHandler {
 				Araclar a = new Araclar(rs.getInt("idarac"), rs.getString("marka"),rs.getString("kullanici"), rs.getString("plaka"), rs.getString("durum"));
 				araclistesi.add(a);
 			}
-			
-			
+
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -75,8 +73,8 @@ public class AraclarHandler {
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
-			
-			
+
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -95,16 +93,16 @@ public class AraclarHandler {
 				if (rs.getString("durum").equals("boşta")) {
 					araclistesi.add(a);
 				}
-				
-			}
-			
-			
+
+        	}
+
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return araclistesi;
 	}
-	
+
 	public ArrayList<Araclar> KullanimdakiAraclariGetir(String user) {
 		ArrayList<Araclar> araclistesi = new ArrayList<Araclar>();
 		String sorgu = "select * from ferahti.arac";
