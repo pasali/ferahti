@@ -47,7 +47,7 @@
 
 		
 			
-			<td><input type="submit" value="Bırak"></td>
+			<button type="submit" id="submit" class="btn btn-primary button-loading" data-loading-text="Loading..."> Bırak </button>
 			<form><br>
 			${bilgi}
 	</div>

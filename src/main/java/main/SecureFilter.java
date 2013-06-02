@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class SecureFilter
  */
-@WebFilter("/rentcar.jsp")
+@WebFilter(filterName = "Secure")
 public class SecureFilter implements Filter {
 
     /**

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class SecureFilter
  */
-@WebFilter("/addcar.jsp")
+@WebFilter(filterName = "Admin")
 public class AdminFilter implements Filter {
 
     /**
