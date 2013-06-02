@@ -26,13 +26,16 @@
 				<ul>
 					<c:if test="${not empty kullanici}">
 						<li><span id="user">Hoşgeldin, <b>${kullanici}</b></span></li>
+						<li><span>Giriş Zamanı: <b>${zaman}</b></span></li>
 					</c:if>
 					<li><a href='index.jsp'><span>Anasayfa</span></a></li>
 					
-					
-					
 					<c:if test="${empty kullanici}">
 						<li><a href="login.jsp">Giriş yap</a></li>
+					</c:if>
+					<c:if test="${ kullanici eq 'admin'}">
+						<li><a href="addcar.jsp">Araç Ekle</a></li>
+						<li><a href="deletecar.jsp">Araç Sil</a></li>
 					</c:if>
 					<c:if test="${not empty kullanici}">
 						<li><a href='freecar.jsp'><span>Araç Bırak</span></a></li>

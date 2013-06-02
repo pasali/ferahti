@@ -1,12 +1,13 @@
 package handler;
 
 import java.sql.*;
-import java.sql.PreparedStatement;
+
 
 public class UyelerHandler {
-	static final String URL = "jdbc:postgresql://ec2-23-21-129-125.compute-1.amazonaws.com/d70stbr7v9732u?useUnicode=true&characterEncoding=UTF-8";
-	static final String USER = "jfcawhlrrysslo";
-	static final String PASS = "pce7oasKqyHunqIDF_ajTL1_UR";
+	
+	static final String URL = "jdbc:mysql://localhost/ferahti";
+	static final String USER = "root";
+	static final String PASS = "4ty9";
 	private Connection  conn;
 	private Statement stmt;
 	private ResultSet rs;
@@ -14,10 +15,10 @@ public class UyelerHandler {
 	
 	
 	public int UyeKayitlimi(String email, String sifre) {
-		String sorgu = "select email,sifre from ferahti.uyeler where email = '"+ email + "' and sifre = '"+ sifre + "'";
+		String sorgu = "select email,sifre from uyeler where email = '"+ email + "' and sifre = '"+ sifre + "'";
 		int sayac = 0;
 		try {
-			Class.forName("org.postgresql.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sorgu);
@@ -35,7 +36,7 @@ public class UyelerHandler {
 	public void UyeKayit(String email, String sifre) {
 		String sorgu = "INSERT INTO ferahti.uyeler (email, sifre) VALUES ('" + email + "', '" + sifre + "')";
 		try {
-			Class.forName("org.postgresql.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);

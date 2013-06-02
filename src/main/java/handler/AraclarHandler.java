@@ -9,19 +9,19 @@ import main.Araclar;
 
 
 public class AraclarHandler {
-	static final String URL = "jdbc:postgresql://ec2-23-21-129-125.compute-1.amazonaws.com/d70stbr7v9732u?useUnicode=true&characterEncoding=UTF-8";
-	static final String USER = "jfcawhlrrysslo";
-	static final String PASS = "pce7oasKqyHunqIDF_ajTL1_UR";
+	static final String URL = "jdbc:mysql://localhost/ferahti?useUnicode=true&characterEncoding=UTF-8";
+	static final String USER = "root";
+	static final String PASS = "4ty9";
 	private Connection  conn;
 	private Statement stmt;
 	private ResultSet rs;
 	
 	public void AracEkle(Araclar arac) {
 		
-		String sorgu = "INSERT INTO ferahti.arac (`marka`, `model`, `durum`) " +
-				"VALUES ('"+ arac.getMarka() +"', '" + arac.getPlaka() + "', '"+ arac.getDurum() +"')";
+		String sorgu = "INSERT INTO `ferahti`.`arac` (`marka`, `plaka`,`durum`) " +
+				"VALUES ('"+ arac.getMarka() +"', '" + arac.getPlaka() + "', '"+ arac.getDurum() + "')";
 		try {
-			Class.forName("org.postgresql.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
@@ -34,13 +34,15 @@ public class AraclarHandler {
 		
 	public void AracGuncelle(String id, String user, String status) {
 		
-		String sorgu = "UPDATE ferahti.arac SET kullanici='" + user + "', durum='" + status + "' WHERE idarac='"+ id + "';";
+		String sorgu = "UPDATE `ferahti`.`arac` SET `kullanici`='" + user + "', `durum`='" + status + "' WHERE `idarac`='"+ id + "';";
 		
 		try {
-			Class.forName("org.postgresql.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -50,7 +52,7 @@ public class AraclarHandler {
 		ArrayList<Araclar> araclistesi = new ArrayList<Araclar>();
 		String sorgu = "select * from ferahti.arac";
 		try {
-			Class.forName("org.postgresql.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeQuery(sorgu);
@@ -67,9 +69,9 @@ public class AraclarHandler {
 		return araclistesi;
 	}
 	public void AracSil(String id) {
-		String sorgu = "DELETE FROM ferahti.arac WHERE idarac='"+ id +"';";
+		String sorgu = "DELETE FROM `ferahti`.`arac` WHERE `idarac`='"+ id +"';";
 		try {
-			Class.forName("org.postgresql.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
@@ -83,14 +85,14 @@ public class AraclarHandler {
 		ArrayList<Araclar> araclistesi = new ArrayList<Araclar>();
 		String sorgu = "select * from ferahti.arac";
 		try {
-			Class.forName("org.postgresql.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeQuery(sorgu);
 			rs = stmt.executeQuery(sorgu);
 			while (rs.next()) {
 				Araclar a = new Araclar(rs.getInt("idarac"), rs.getString("marka"),rs.getString("kullanici"), rs.getString("plaka"), rs.getString("durum"));
-				if (rs.getString("durum").equals("boşta") || rs.getString("durum") == null) {
+				if (rs.getString("durum").equals("boşta") || rs.getString("durum") == null ) {
 					araclistesi.add(a);
 				}
 				
@@ -107,7 +109,7 @@ public class AraclarHandler {
 		ArrayList<Araclar> araclistesi = new ArrayList<Araclar>();
 		String sorgu = "select * from ferahti.arac";
 		try {
-			Class.forName("org.postgresql.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeQuery(sorgu);

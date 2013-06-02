@@ -3,6 +3,9 @@ package main;
 import handler.UyelerHandler;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,7 +36,10 @@ public class LoginServlet extends HttpServlet {
 		handler.UyelerHandler controller = new UyelerHandler();
 		int ret = controller.UyeKayitlimi(uye.getAd(), uye.getSifre());
 		if (ret == 1) {
-			request.getSession().setAttribute("kullanici", uye.getAd());	
+			request.getSession().setAttribute("kullanici", uye.getAd());
+			SimpleDateFormat sdf = new SimpleDateFormat("E yyyy.MM.dd '\n' hh:mm:ss a", new Locale("tr"));
+			String date = sdf.format(new Date());
+			request.getSession().setAttribute("zaman", date.toString());
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}else {
 			request.setAttribute("data", data);

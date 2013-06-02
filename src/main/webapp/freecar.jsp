@@ -32,7 +32,6 @@
 			<tbody>
 				<c:forEach items="${liste}" var="arac">
 					<tr>
-					<c:set var="durum" value="boşta"/>
 						<td>${arac.id}</td>
 						<td>${arac.marka}</td>
 						<td>${arac.kullanici}</td>
