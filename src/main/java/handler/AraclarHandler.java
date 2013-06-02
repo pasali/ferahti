@@ -9,7 +9,7 @@ import main.Araclar;
 
 
 public class AraclarHandler {
-	static final String URL = "jdbc:postgresql://ec2-23-21-129-125.compute-1.amazonaws.com/d70stbr7v9732u?useUnicode=true&characterEncoding=UTF-8";
+	static final String URL = "jdbc:postgresql://ec2-23-21-129-125.compute-1.amazonaws.com:5432/d70stbr7v9732u?useUnicode=true&characterEncoding=UTF-8";
 	static final String USER = "jfcawhlrrysslo";
 	static final String PASS = "pce7oasKqyHunqIDF_ajTL1_UR";
 	private Connection  conn;
