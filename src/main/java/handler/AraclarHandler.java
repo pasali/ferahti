@@ -18,7 +18,7 @@ public class AraclarHandler {
 
 	public void AracEkle(Araclar arac) {
 
-		String sorgu = "INSERT INTO ferahti.arac (`marka`, `plaka`, `durum`) " +
+		String sorgu = "INSERT INTO ferahti.arac (marka, plaka, durum) " +
 				"VALUES ('"+ arac.getMarka() +"', '" + arac.getPlaka() + "', '"+ arac.getDurum() +"')";
 		try {
 			Class.forName("org.postgresql.Driver");
