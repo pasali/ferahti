@@ -15,7 +15,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="bootstrap/style.css" rel="stylesheet">
 <title>Ferahti</title>
-
+<fieldset>
 </head>
 <body>
 	<div id="main">

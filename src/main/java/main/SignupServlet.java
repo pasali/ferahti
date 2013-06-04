@@ -33,10 +33,13 @@ public class SignupServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
+		String ad = request.getParameter("ad");
+		String soyad = request.getParameter("soyad");
 		handler.UyelerHandler controller = new UyelerHandler();
-		controller.UyeKayit(user, pass);
+		controller.UyeKayit(user, pass, ad, soyad);
 		request.getRequestDispatcher("login.jsp").forward(request, response);
 	}
 

@@ -32,10 +32,10 @@ public class UyelerHandler {
 		return sayac;
 	}
 
-	public void UyeKayit(String email, String sifre) {
-		String sorgu = "INSERT INTO ferahti.uyeler (email, sifre) VALUES ('" + email + "', '" + sifre + "')";
+	public void UyeKayit(String email, String sifre, String ad, String soyad) {
+		String sorgu = "INSERT INTO ferahti.uyeler (email, sifre, ad, soyad) VALUES ('" + email + "', '" + sifre + "', '" + ad + "', '" + soyad + "')";
 		try {
-			Class.forName("org.postgresql.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);

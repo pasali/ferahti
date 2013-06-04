@@ -13,12 +13,9 @@
 	liste = a.AraclariGetir();
 	request.setAttribute("liste", liste);
 %>
-
 <center>
 <h2>Kayıtlı olan araçlar:</h2>
 <div style= "float:right;height:300px;width:560px;">		
-
-	
 <table class="table table-hover">
              <thead>
                 <tr>

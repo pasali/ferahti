@@ -1,5 +1,6 @@
 </div>
 	</div>
+	</fieldset>
 	<div class="navbar navbar-inverse navbar-fixed-bottom" style="width:768px;margin-left:300px">
       <div class="navbar-inner">
         <div class="container">
