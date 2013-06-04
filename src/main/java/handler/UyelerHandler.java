@@ -35,7 +35,7 @@ public class UyelerHandler {
 	public void UyeKayit(String email, String sifre, String ad, String soyad) {
 		String sorgu = "INSERT INTO ferahti.uyeler (email, sifre, ad, soyad) VALUES ('" + email + "', '" + sifre + "', '" + ad + "', '" + soyad + "')";
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sorgu);
