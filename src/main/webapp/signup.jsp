@@ -24,15 +24,14 @@ function validateForm()
 	}
 	var x = document.forms["sign_up_form"]["user"].value;
 	
-	if (x == null || x == "" ))
+	if (x == null || x == "")
 	{
 		alert("Kullanıcı adı boş bırakılamaz!");
 		return false;
 	}
 	var x = document.forms["sign_up_form"]["pass"].value;
 	var y = document.forms["sign_up_form"]["re_pass"].value;
-	
-	if((x!=y || !x))
+	if((x != y || !x))
 	{
 		alert("Şifreler eşleşmiyor!");
 		return false;
@@ -45,14 +44,14 @@ function validateForm()
 					<fieldset>
 						<div class="control-group">
 							<div class="controls">
-								Ad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="ad" size="5"  />
+								Ad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="ad" size="5"  />
 							
 							</div>
 						</div>
 						
 						<div class="control-group">
 							<div class="controls">
-								Soyad:&nbsp;<input type="text" name="soyad" size="5"/>
+								Soyad:&nbsp;&nbsp;&nbsp;<input type="text" name="soyad" size="5"/>
 							
 							</div>
 						</div>
@@ -67,14 +66,14 @@ function validateForm()
 						<div class="control-group">
 							
 							<div class="controls">
-								Şifre: &nbsp;&nbsp;&nbsp;<input type="password"  name="pass" size="5">
+								Şifre: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password"  name="pass" size="5">
 
 							</div>
 						</div>
 						<div class="control-group">
 							
 							<div class="controls">
-							Tekrar: <input type="password"  name="re_pass" size="5">
+							Tekrar:&nbsp;&nbsp; <input type="password"  name="re_pass" size="5">
 
 							</div>
 						</div>

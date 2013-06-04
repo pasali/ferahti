@@ -6,7 +6,7 @@
 	<fieldset>
 		<div class="control-group">
 			<div class="controls">
-				E-mail:&nbsp;<input type="text" name="user" size="5" />
+				Kull.Adı:&nbsp;<input type="text" name="user" size="5" />
 
 			</div>
 		</div>
@@ -14,7 +14,7 @@
 		<div class="control-group">
 
 			<div class="controls">
-				Şifre: &nbsp;&nbsp;&nbsp;<input type="password" name="pass" size="5">
+				Şifre: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="pass" size="5">
 
 			</div>
 		</div>
