@@ -6,34 +6,32 @@
 <script type="text/javascript">
 function validateForm()
 {
-	var x=document.forms["sign_up_form"]["ad"].value;
+	var x = document.forms["sign_up_form"]["ad"].value;
 	 
-	if (x==null || x=="")
+	if (x == null || x == "")
 	{
 		alert("Ad boş bırakılamaz!");
 		return false;
 	}
 	
 	
-	var x=document.forms["sign_up_form"]["soyad"].value;
+	var x = document.forms["sign_up_form"]["soyad"].value;
 	
-	if (x==null || x=="")
+	if (x == null || x == "")
 	{
 		alert("Soyad boş bırakılmaz!");
 		return false;
 	}
-	var x=document.forms["sign_up_form"]["user"].value;
-	var atpos =x.indexOf("@");
-	var dotpos =x.lastIndexOf(".");
+	var x = document.forms["sign_up_form"]["user"].value;
 	
-	if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+	if (x == null || x == "" ))
 	{
-		alert("E-mail geçerli değil!");
+		alert("Kullanıcı adı boş bırakılamaz!");
 		return false;
 	}
-	var x=document.forms["sign_up_form"]["pass"].value;
-	var y=document.forms["sign_up_form"]["re_pass"].value;
-	var z=x.length;
+	var x = document.forms["sign_up_form"]["pass"].value;
+	var y = document.forms["sign_up_form"]["re_pass"].value;
+	
 	if((x!=y || !x))
 	{
 		alert("Şifreler eşleşmiyor!");
@@ -61,7 +59,7 @@ function validateForm()
 						
 						<div class="control-group">
 							<div class="controls">
-								E-mail:&nbsp;<input type="text" name="user" size="5" />
+								Kull.Adı:&nbsp;<input type="text" name="user" size="5" />
 							
 							</div>
 						</div>
